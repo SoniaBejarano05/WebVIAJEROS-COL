@@ -13,7 +13,7 @@ function Login() {
         <Form size="lg" >
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" />
+            <Form.Control placeholder = "Enter email" />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
