@@ -1,9 +1,17 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from '../assets/logoWebViajeros.png';
 import { useAuth } from "../context/auth";
 
+
 function Navbar() {
   const [user, setUser] = useAuth();
+
+  const handleLogout = () => {
+   
+    localStorage.removeItem("user");
+    
+    setUser(null);
+  };
 
   return (
     <>
@@ -26,16 +34,15 @@ function Navbar() {
           {user ? (
             <div className="navbar-text">
               <span className="me-2">Bienvenido, {user.username}</span>
+              <button className="btn btn-danger" onClick={handleLogout}>LogOut</button>
             </div>
           ) : (
             <button className="btn btn-primary">
-              <Link to='/auth/login' className="nav-link">Iniciar Sesión</Link>
+              <Link to='/auth/login' className="nav-link">LogIn</Link>
             </button>
           )}
         </div>
       </nav>
-
-      <Outlet/>
     </>
   )
 }

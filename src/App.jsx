@@ -10,7 +10,7 @@ function App() {
       <div className='px-1 pt-1'>
         <Router />
       </div>
-      {/* <Footer/> */} 
+      <Footer/> 
     </>
   )
 }
