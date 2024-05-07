@@ -8,7 +8,7 @@ import  facebook from '../assets/images/facebook.png'
 export const Footer = () =>{
     return(
       <>
-      <div className="container vw-100">
+      <div className="container">
         <p> © 2024 Web Viajeros COL. Todos los derechos reservados.   </p>
         <img className='x' src={x} alt="" />
         <img className='youtube' src={youtube} alt="" />

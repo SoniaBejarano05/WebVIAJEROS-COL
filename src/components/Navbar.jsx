@@ -1,14 +1,12 @@
-import { Link } from "react-router-dom";
-import logo from '../assets/logoWebViajeros.png'
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
+import { Link, Outlet } from "react-router-dom";
+import logo from '../assets/logoWebViajeros.png';
 
 function Navbar() {
   return (
     <>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a class="navbar-brand d-flex align-items-center" href="/">
+          <a class="navbar-brand d-flex align-items-center ms-3" href="/">
             <img src={logo} alt='Logo' style={{height: '3rem'}}/>
             <h2 className='px-2' style={{color: 'green'}}>WEB VIAJEROS</h2>
           </a>
@@ -18,6 +16,7 @@ function Navbar() {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
+                {/* <Link to='/home'>home</Link> */}
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
               <li class="nav-item">
@@ -26,16 +25,15 @@ function Navbar() {
               <li class="nav-item">
                 <a class="nav-link disabled" aria-disabled="true">Disabled</a>
               </li>
+              <li class="nav-item">
+                {/* <Link to='Login' className="text-light text-decoration-none">Iniciar Sesion</Link> */}
+              </li>
             </ul>
           </div>
-          <Button variant="primary" type="submit">
-            Ingresar
-          </Button>
-          {/* <button className="btn btn-primary">
-            <Link to='/auth/register' className="text-light text-decoration-none">Registrarse</Link>
-          </button> */}
-        </div>\
+        </div>
       </nav>
+
+      <Outlet/>
     </>
   )
 }

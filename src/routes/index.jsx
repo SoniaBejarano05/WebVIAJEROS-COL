@@ -17,7 +17,7 @@ function Router() {
         <Route path="/about" element={<About />}></Route>
         <Route path="/blog" element={<Blog />}></Route>
         <Route path="/auth" element={<LayoutLogin />}>
-          <Route path="/auth/login" element={<Login/>}></Route>
+          <Route path="/login" element={<Login/>}></Route>
           <Route path="/auth/register" element={<Register/>}></Route>
         </Route>
       </Routes>
