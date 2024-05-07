@@ -13,6 +13,7 @@ function Home() {
             <div className="col-sm-8 d-flex align-items-center">
               <div className='ps-3 text-light'>
                 <p className='fs-1' style={{textShadow: 'black 0.1em 0.1em 0.2em'}}>Bienvenidos a <br /><span className='fw-bold'>Viajeros por Colombia.</span></p>
+                <p className='fs-1' style={{textShadow: 'black 0.1em 0.1em 0.2em'}}> Aqui encontraras las mejores opciones gastronomicas tipicas del Caribe Colombiano<br /><span className='fw-bold'> Guiate y haz de tu viaje un recuerdo inolvidable!</span></p>
               </div>
             </div>
             <div className="col-sm-4">
