@@ -27,6 +27,12 @@ function Navbar() {
               <li className="nav-item">
               <Link to="/blog" className="nav-link active" aria-current="page">Blog</Link>
               </li>
+              <li className="nav-item">
+              <Link to="/about" className="nav-link active" aria-current="page">Sobre Nosotros</Link>
+              </li>
+              <li className="nav-item">
+              <Link to="/restaurante" className="nav-link active" aria-current="page">Restaurantes</Link>
+              </li>
             </ul>
           </div>
           {user ? (
