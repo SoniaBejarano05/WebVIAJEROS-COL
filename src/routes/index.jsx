@@ -12,13 +12,14 @@ function Router() {
     <>
       <BrowserRouter>
       <Routes>
-        <Route path="/" ></Route>
-        <Route index path="/home" element={<Home />}></Route>
-        <Route path="/about" element={<About />}></Route>
-        <Route path="/blog" element={<Blog />}></Route>
-        <Route path="/auth" element={<LayoutLogin />}>
-          <Route path="/login" element={<Login/>}></Route>
-          <Route path="/auth/register" element={<Register/>}></Route>
+        <Route path="/" >
+          <Route index path="home" element={<Home />}></Route>
+          <Route path="about" element={<About />}></Route>
+          <Route path="blog" element={<Blog />}></Route>
+          <Route path="auth" element={<LayoutLogin />}>
+            <Route path="login" element={<Login/>}></Route>
+            <Route path="register" element={<Register/>}></Route>
+          </Route>
         </Route>
       </Routes>
         
@@ -26,5 +27,8 @@ function Router() {
     </>
   )
 }
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
 
 export default Router
