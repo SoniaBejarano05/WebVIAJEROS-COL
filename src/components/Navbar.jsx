@@ -18,6 +18,12 @@ function Navbar() {
               <li className="nav-item">
               <Link to="/home" className="nav-link active" aria-current="page">Home</Link>
               </li>
+              <li className="nav-item">
+              <Link to="/about" className="nav-link active" aria-current="page">Sobre Nosotros</Link>
+              </li>
+              <li className="nav-item">
+              <Link to="/restaurante" className="nav-link active" aria-current="page">Restaurantes</Link>
+              </li>
             </ul>
           </div>
           <button className="btn btn-primary">
