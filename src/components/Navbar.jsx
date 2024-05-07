@@ -1,7 +1,10 @@
 import { Link, Outlet } from "react-router-dom";
 import logo from '../assets/logoWebViajeros.png';
+import { useAuth } from "../context/auth";
 
 function Navbar() {
+  const [user, setUser] = useAuth();
+
   return (
     <>
       <nav className="navbar navbar-expand-lg">
@@ -16,13 +19,19 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-              <Link to="/home" className="nav-link active" aria-current="page">Home</Link>
+                <Link to="/home" className="nav-link active" aria-current="page">Home</Link>
               </li>
             </ul>
           </div>
-          <button className="btn btn-primary">
-            <Link to='/auth/login' className="nav-link">Iniciar Sesion</Link>
-          </button>
+          {user ? (
+            <div className="navbar-text">
+              <span className="me-2">Bienvenido, {user.username}</span>
+            </div>
+          ) : (
+            <button className="btn btn-primary">
+              <Link to='/auth/login' className="nav-link">Iniciar Sesión</Link>
+            </button>
+          )}
         </div>
       </nav>
 
@@ -31,4 +40,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Navbar;
