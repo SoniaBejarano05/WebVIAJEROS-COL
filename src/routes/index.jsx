@@ -10,9 +10,8 @@ import Register from '../pages/auth/Register.jsx'
 function Router() {
   return (
     <>
-      <BrowserRouter>
       <Routes>
-        <Route path="/" >
+        <Route path="/" element={<Home />}>
           <Route index path="home" element={<Home />}></Route>
           <Route path="about" element={<About />}></Route>
           <Route path="blog" element={<Blog />}></Route>
@@ -21,14 +20,12 @@ function Router() {
             <Route path="register" element={<Register/>}></Route>
           </Route>
         </Route>
-      </Routes>
-        
-      </BrowserRouter>
+      </Routes> 
     </>
   )
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+// root.render(<App />);
 
 export default Router

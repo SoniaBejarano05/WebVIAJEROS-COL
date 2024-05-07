@@ -16,20 +16,13 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                {/* <Link to='/home'>home</Link> */}
-                <a className="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link disabled" aria-disabled="true">Disabled</a>
-              </li>
-              <li className="nav-item">
-                <Link to='/auth' className="text-light text-decoration-none">Iniciar Sesion</Link>
+              <Link to="/home" className="nav-link active" aria-current="page">Home</Link>
               </li>
             </ul>
           </div>
+          <button className="btn btn-primary">
+            <Link to='/auth/login' className="nav-link">Iniciar Sesion</Link>
+          </button>
         </div>
       </nav>
 

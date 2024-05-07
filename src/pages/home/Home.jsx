@@ -10,9 +10,9 @@ function Home() {
       <div className='vh-100 rounded-5' style={{backgroundImage: `url(${wallHeader})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
         <div className='p-3 h-100'>
           <div className="row h-100">
-            <div className="col-sm-8 d-flex align-items-end">
+            <div className="col-sm-8 d-flex align-items-center">
               <div className='ps-3 text-light'>
-                <p className='fs-1'>Bienvenidos a <br /><span className='fw-bold'>Viajeros por Colombia.</span></p>
+                <p className='fs-1' style={{textShadow: 'black 0.1em 0.1em 0.2em'}}>Bienvenidos a <br /><span className='fw-bold'>Viajeros por Colombia.</span></p>
               </div>
             </div>
             <div className="col-sm-4">
