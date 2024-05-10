@@ -1,57 +1,74 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import useRegister from "../../hooks/useRegister";
 
 function Register() {
 
+  const { formData, handleChange, handleSubmit, confirmPass, msgError } = useRegister();
+  const countries = [
+    {name: 'colombia', id: 1},
+    {name: 'espana', id: 2},
+    {name: 'estados Unidos', id: 3},
+
+  ]
     return (
       <>
         <div>
-          <p>Queremos saber tus opiniones, para ello debes registrarte.</p>
+          <p className="text-light">Queremos saber tus opiniones, para ello debes registrarte.</p>
         </div>
-        <form class="row g-3">
-          <div class="col-md-6">
-            <label for="name" class="form-label">Nombres</label>
-            <input type="text" class="form-control" id="name" />
+        <hr />
+        {
+          msgError && 
+          <div class="alert alert-info" role="alert">
+            { msgError }
           </div>
-          <div class="col-md-6">
-            <label for="lastName" class="form-label">Apellidos</label>
-            <input type="text" class="form-control" id="lastName" />
-          </div>
-          <div class="col-12">
-            <label for="inputAddress" class="form-label">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" />
-          </div>
-          <div class="col-12">
-            <label for="inputAddress2" class="form-label">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" />
-          </div>
-          <div class="col-md-6">
-            <label for="inputCity" class="form-label">City</label>
-            <input type="text" class="form-control" id="inputCity" />
-          </div>
-          <div class="col-md-4">
-            <label for="inputState" class="form-label">State</label>
-            <select id="inputState" class="form-select">
-              <option selected>Choose...</option>
-              <option>...</option>
-            </select>
-          </div>
-          <div class="col-md-2">
-            <label for="inputZip" class="form-label">Zip</label>
-            <input type="text" class="form-control" id="inputZip" />
-          </div>
-          <div class="col-12">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck" />
-              <label class="form-check-label" for="gridCheck">
-                Check me out
-              </label>
+        }
+        <form onSubmit={handleSubmit} className="text-start">
+          <div className="row">
+            <div className="col-md-6 pb-3">
+              <label htmlFor="name" className="form-label">Nombres</label>
+              <input type="text" name="name" className="form-control" id="name" placeholder="Nombres" value={formData.name} onChange={handleChange} required />
             </div>
+            <div className="col-md-6 pb-3">
+              <label htmlFor="lastName" className="form-label">Apellidos</label>
+              <input type="text" name="lastName" className="form-control" id="lastName" placeholder="Apellidos" value={formData.lastName} onChange={handleChange} required />
+            </div>
+            <div className="col-md-6 pb-3">
+            <label htmlFor="inputCountry" className="form-label">Pais</label>
+            <select
+              id="inputCountry"
+              className="form-select"
+              name="country"
+              value={formData.country}
+              onChange={handleChange}
+              required
+            >
+              <option selected>Choose...</option>
+              {countries.map(country => (
+                <option key={country.id} value={country.id}>
+                  {country.name}
+                </option>
+              ))}
+            </select>
+            </div>  
+            <div className="col-md-6 pb-3">
+              <label htmlFor="email" className="form-label">Correo</label>
+              <input type="email" name="email" className="form-control" id="email" placeholder="Correo" value={formData.email} onChange={handleChange} required />
+            </div>  
+            <div className="col-md-6 pb-3">
+              <label htmlFor="password" className="form-label">Contraseña</label>
+              <input type="password" name="password" className="form-control" id="password" placeholder="Contraseña" value={formData.password} onChange={handleChange} required />
+            </div>  
+            <div className="col-md-6 pb-3">
+              <label htmlFor="confirmPass" className="form-label">Confirmar Contraseña</label>
+              <input type="password" name="confirmPass" className="form-control" id="confirmPass" placeholder="Confirmar contraseña" value={confirmPass} onChange={handleChange} required />
+            </div>  
           </div>
-          <div class="col-12">
-            <button type="submit" class="btn btn-primary">Sign in</button>
+          <div className="col-12">
+            <button type="submit" className="btn btn-primary">Registrarse</button>
           </div>
         </form>
-        <button>
+        <button className="btn btn-primary">
             <Link to='/auth/login'>Ir al login</Link>
         </button>
       </>

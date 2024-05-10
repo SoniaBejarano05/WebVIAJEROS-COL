@@ -5,8 +5,8 @@ function LayoutLogin() {
 
   return (
     <>
-      <div className="vh-100 rounded-5 d-flex flex-column align-items-center justify-content-center" style={{ backgroundImage: `url(${wallpaper})`, backgroundSize: 'cover' }}>
-        <div className="p-4 text-center rounded-5" style={{backgroundColor: 'rgba(0, 0, 0, 0.2)'}}>
+      <div className="vh-100 text-light rounded-5 d-flex flex-column align-items-center justify-content-center" style={{ backgroundImage: `url(${wallpaper})`, backgroundSize: 'cover' }}>
+        <div className="p-4 text-center rounded-5" style={{backgroundColor: 'rgba(0, 0, 0, 0.5)'}}>
           <h1>Ingresa a la web Viajeros en Colombia.</h1>
           <div className="">
             <Outlet />
