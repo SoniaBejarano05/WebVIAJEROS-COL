@@ -66,9 +66,11 @@ function Login() {
             Submit
           </Button>
         </Form>
-        <button className="btn btn-primary">
-          <Link to='/auth/register' className="text-light text-decoration-none">Registrarse</Link>
-        </button>
+        <Link to='/auth/register' className="text-light text-decoration-none">
+          <button className="btn btn-primary">
+            Registrarse
+          </button>
+        </Link>
       </>
     )
   }
