@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import '../../assets/css/tarjetas.css'
 import  Imagen  from '../../assets/restaurantes/rest.jpg';
 import wallHeader from '../../assets/restaurant_wallpaper.jpeg';
 
@@ -13,10 +14,10 @@ function Restaurante() {
           <label >Ciudad</label>
           <input></input>
         </div>
-        <div className="card mb-3 rounded-3" style={{maxWidth: "", margin: "10px", backgroundColor:"rgba(255,255,255,0.5)"}}>
+        <div className="card mb-3 rounded-3 tarjeta " >
           <div className="row g-0">
-            <div className="col-md-4"style={{display: "flex", boxShadow:"inherit"}}>
-            <img className='imagen' src={Imagen} alt="" style={{maxWidth: "", margin: "5px", borderRadius: "10px"}}/>
+            <div className="col-md-4 p-2 d-flex justify-content-center">
+              <img className='' src={Imagen} alt="" />
             </div>
             <div className="col-md-8">
               <div className="card-body">
