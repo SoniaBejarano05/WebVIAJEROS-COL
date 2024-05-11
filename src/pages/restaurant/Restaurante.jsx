@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../../assets/css/tarjetas.css'
+import '../../assets/css/styles.css'
 import  Imagen  from '../../assets/restaurantes/rest.jpg';
 import wallHeader from '../../assets/restaurant_wallpaper.jpeg';
 
@@ -8,7 +8,7 @@ function Restaurante() {
 
   return (
     <>
-      <div className='vh-100 rounded-5' style={{backgroundImage: `url(${wallHeader})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+      <div className='vh-100 rounded-5 arriba'>
         <h1 style={{display: "flex", justifyContent:"center"}}>Encuentra tu proximo restaurante </h1>
         <div>
           <label >Ciudad</label>

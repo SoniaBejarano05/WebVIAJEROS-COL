@@ -1,0 +1,112 @@
+@font-face {
+    font-family: "Freeman";
+    src: url("../fonts/Freeman-Regular.ttf");   
+}
+
+/* Barra de navegación */
+
+.barra{
+    font-size: 16px;
+    font-family:"Freeman" ;
+    background-color: rgba(202, 202, 202, 1); ;
+    border-radius:0px 0px 15px 15px;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    height: 4rem;
+}
+.items{
+    justify-content: center;
+    
+}
+.items ul{  
+    grid-column: 3 / 1;
+    align-items: center;
+}
+.items li{
+    padding-left: 10px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+}
+.items li :hover{
+    background-color: rgb(198, 198, 198);;
+    border-radius:10px;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding-top: 10px;
+}
+.logo h2{
+   color: #059C3F;
+    
+}
+.arriba{
+    font-family: "Bebas Neue", sans-serif;
+    src: url("../fonts/BebasNeue-Regular.ttf");
+    margin-top: 5rem ;
+}
+.boton {
+    font-size: 18px;
+    padding: 8px;
+    text-decoration: none;
+    box-shadow:  0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    text-shadow: 2px 2px 5px rgba (0, 0, 0, 0.3);
+    color: rgb(256, 256, 256);
+    margin-top: 2px;
+    
+}
+.login {
+    background-color:#059C3F ;
+    border-color: #059C3F;    
+    border-radius:20px 0px 0px 0px;
+}
+.signup{
+    background-color:#059c3f78;
+    border-color: #059c3f78;    
+    border-radius:0px 0px 20px 0px;
+}
+
+@media (max-width: 760px){
+    .logo a{
+        padding-top:0px ;
+    }
+    .boton{
+        border-radius:20px;
+    }
+}
+
+/* Tarjetas restaurantes*/
+
+.tarjeta{
+    margin: 10px;
+    background-color:rgba(255,255,255,0.5);
+    max-height: 250px;
+}
+.imagen{
+    border-radius: 10px;
+    max-height: 80%;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: block;
+
+}
+@media (max-width: 760px){
+    .tarjeta{
+        margin: 10px;
+        background-color:rgba(0,255,255,0.5);
+        max-height: 600px;
+    }
+    .imagen{
+        border-radius: 10px;
+        max-height: 100%;
+        max-width: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
