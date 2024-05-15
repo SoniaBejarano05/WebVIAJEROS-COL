@@ -16,7 +16,7 @@ function Navbar() {
   return (
     <>
       <nav className="navbar barra navbar-expand-lg fixed-top pt-0 ">
-      <div class="container-fluid">
+      <div className="container-fluid">
           <a className="logo " href="/">
             <img src={logo} alt='Logo' style={{height: '3rem'}}/>
             <h2 className='px-2 logo' >WEB VIAJEROS</h2>

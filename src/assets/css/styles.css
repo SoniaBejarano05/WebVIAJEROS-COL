@@ -2,7 +2,11 @@
     font-family: "Freeman";
     src: url("../fonts/Freeman-Regular.ttf");   
 }
-
+.alto{
+    font-family: "Bebas Neue", sans-serif;
+    src: url("../fonts/BebasNeue-Regular.ttf");
+    margin-top: 5rem ;
+}
 /* Barra de navegación */
 
 .barra{
@@ -40,13 +44,7 @@
     padding-top: 10px;
 }
 .logo h2{
-   color: #059C3F;
-    
-}
-.arriba{
-    font-family: "Bebas Neue", sans-serif;
-    src: url("../fonts/BebasNeue-Regular.ttf");
-    margin-top: 5rem ;
+   color: #059C3F;    
 }
 .boton {
     font-size: 18px;
@@ -56,7 +54,6 @@
     text-shadow: 2px 2px 5px rgba (0, 0, 0, 0.3);
     color: rgb(256, 256, 256);
     margin-top: 2px;
-    
 }
 .login {
     background-color:#059C3F ;
@@ -69,17 +66,22 @@
     border-radius:0px 0px 20px 0px;
 }
 
-@media (max-width: 760px){
-    .logo a{
-        padding-top:0px ;
-    }
-    .boton{
-        border-radius:20px;
-    }
+/* Modulo restaurantes*/
+.tit-restaurantes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-
-/* Tarjetas restaurantes*/
-
+.cont-tarjeta{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+.lateral-izq{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
 .tarjeta{
     margin: 10px;
     background-color:rgba(255,255,255,0.5);
@@ -93,9 +95,14 @@
     align-items: center;
     justify-content: center;
     display: block;
-
 }
 @media (max-width: 760px){
+    .logo a{
+        padding-top:0px ;
+    }
+    .boton{
+        border-radius:20px;
+    }
     .tarjeta{
         margin: 10px;
         background-color:rgba(0,255,255,0.5);
@@ -109,4 +116,8 @@
         align-items: center;
         justify-content: center;
     }
+    .cont-tarjeta{
+        background-color: black;
+    }
+
 }
