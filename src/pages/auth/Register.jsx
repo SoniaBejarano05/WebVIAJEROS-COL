@@ -4,13 +4,16 @@ import useRegister from "../../hooks/useRegister";
 
 function Register() {
 
-  const { formData, handleChange, handleSubmit, confirmPass, msgError } = useRegister();
+  const { formData, handleChange, handleSubmit, msgError } = useRegister();
   const countries = [
     {name: 'colombia', id: 1},
     {name: 'espana', id: 2},
     {name: 'estados Unidos', id: 3},
 
   ]
+
+  const [confirmPass, setConfirmPassword] = useState('');
+
     return (
       <>
         <div>
@@ -23,6 +26,7 @@ function Register() {
             { msgError }
           </div>
         }
+        { confirmPass }
         <form onSubmit={handleSubmit} className="text-start">
           <div className="row">
             <div className="col-md-6 pb-3">
@@ -61,7 +65,7 @@ function Register() {
             </div>  
             <div className="col-md-6 pb-3">
               <label htmlFor="confirmPass" className="form-label">Confirmar Contraseña</label>
-              <input type="password" name="confirmPass" className="form-control" id="confirmPass" placeholder="Confirmar contraseña" value={confirmPass} onChange={handleChange} required />
+              <input type="password" name="confirmPass" className="form-control" id="confirmPass" placeholder="Confirmar contraseña" value={confirmPass} onChange={(e) => setConfirmPassword(e.target.value)} required />
             </div>  
           </div>
           <div className="col-12">

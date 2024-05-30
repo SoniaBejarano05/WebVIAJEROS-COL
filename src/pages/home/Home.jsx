@@ -7,7 +7,7 @@ function Home() {
 
   return (
     <>
-      <div className='vh-100 rounded-5' style={{backgroundImage: `url(${wallHeader})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
+      <div className='vh-50 rounded-5' style={{backgroundImage: `url(${wallHeader})`, backgroundSize: 'cover', backgroundRepeat: 'no-repeat'}}>
         <div className='p-3 h-100'>
           <div className="row h-100">
             <div className="col-sm-8 d-flex align-items-center">
