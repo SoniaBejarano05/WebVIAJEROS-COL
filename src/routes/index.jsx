@@ -6,6 +6,7 @@ import Restaurante from "../pages/restaurant/Restaurante.jsx";
 import LayoutLogin from "../pages/auth/LayoutAuth.jsx";
 import Login from "../pages/auth/Login.jsx";
 import Register from '../pages/auth/Register.jsx'
+import Profile from '../pages/profile/Profile.jsx'
 
 function Router() {
   return (
@@ -19,13 +20,11 @@ function Router() {
             <Route path="login" element={<Login/>}></Route>
             <Route path="register" element={<Register/>}></Route>
           </Route>
+          <Route path="profile" element={<Profile />}></Route>
         </Route>
       </Routes> 
     </>
   )
 }
-
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(<App />);
 
 export default Router

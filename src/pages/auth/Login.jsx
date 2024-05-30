@@ -3,10 +3,11 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useState } from "react";
 import { useAuth } from "../../context/auth";
+import axios from 'axios';
 
 function Login() {
 
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const [user, setUser] = useAuth()
@@ -15,20 +16,35 @@ function Login() {
     { username: 'fabian', password: '1234' },
     { username: 'juanito', password: '4321' },
   ];
-  
+
   const handleSubmit = (event) => {
     event.preventDefault();
-
+    axios.post('http://localhost:3000/api/auth',
+              {
+                email,
+                password
+              }
+            )
+            .then(response => {
+                setData(response.data);
+                console.log(response.data);
+                // setLoading(false);
+            })
+            .catch(error => {
+                console.log(error);
+            });
     
-    const user = users.find(e => e.username === username && e.password === password);
-    if (user) {
-      console.log("Inicio de sesión exitoso");
-      setUser(user)
-      navigate('/home');
-    } else {
-      alert('Usuario o contraseña incorrectos');
-    }
+    // const user = users.find(e => e.username === username && e.password === password);
+    // if (user) {
+    //   console.log("Inicio de sesión exitoso");
+    //   setUser(user)
+    //   navigate('/profile');
+    // } else {
+    //   alert('Usuario o contraseña incorrectos');
+    // }
   };
+  
+  
 
 
     return (
@@ -44,8 +60,8 @@ function Login() {
               type="text" 
               placeholder="Enter email" 
               id="username" 
-              value={username} 
-              onChange={(e) => setUsername(e.target.value)} 
+              value={email} 
+              onChange={(e) => setEmail(e.target.value)} 
               required 
             />
           </Form.Group>
@@ -63,7 +79,7 @@ function Login() {
           </Form.Group>
 
           <Button variant="primary" type="submit">
-            Submit
+            Ingresar
           </Button>
         </Form>
         <Link to='/auth/register' className="text-light text-decoration-none">

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from '../assets/logoWebViajeros.png';
 import { useAuth } from "../context/auth";
-import '../assets/css/styles.css'
+// import '../assets/css/styles.css'
 
 function Navbar() {
   const [user, setUser] = useAuth();

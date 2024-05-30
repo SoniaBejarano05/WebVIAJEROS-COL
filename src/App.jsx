@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <div className='px-1 pt-1' >
+      <div className='px-1 pt-1 alto' >
         <Router />
       </div>
       {/* <Footer/>  */}
