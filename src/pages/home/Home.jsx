@@ -38,8 +38,25 @@ function Home() {
             </div>
           </div>
         </div>
-        
       </div>
+      <div className='card bg-dark border-0 rounded-5 p-3'>
+                <h4>Ana Restaurante Bar</h4>
+                <FaArrowRight />
+                <hr className='m-0 py-1'/>
+                <div className="row">
+                  <div className="col-md-6">
+                    <img 
+                    src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/27/ea/3c/66/ana-caribe-asia.jpg?w=1200&h=-1&s=1" 
+                    alt="" 
+                    style={{ width: '100%' }}
+                    className='rounded-3'
+                    />
+                  </div>
+                  <div className="col-md-6">
+                    a
+                  </div>
+                </div>
+              </div>
     </>
   )
 }

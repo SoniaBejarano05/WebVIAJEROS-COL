@@ -26,8 +26,11 @@ function Login() {
               }
             )
             .then(response => {
-                setData(response.data);
-                console.log(response.data);
+              const {ok, token, msg} = response.data;
+              if ( ok ) {
+                setUser(response.data);
+                navigate('/profile');
+              }
                 // setLoading(false);
             })
             .catch(error => {
