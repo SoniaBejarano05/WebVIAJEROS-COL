@@ -96,6 +96,59 @@
     justify-content: center;
     display: block;
 }
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+}
+.contenedor-tarjetas{
+    display: grid;
+    grid-template-columns: repeat(3, 10fr);
+}
+.card{
+    margin: 4px 4px 4px 0px;
+}
+.img-home{
+    width: 100%;
+    border-radius: 2rem 2rem 0rem 0rem;
+}
+.titulo-tarjeta-home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255); 
+    margin:5px 0px;
+}
+.texto{
+    color:azure;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0px;
+}
+.card-stats {
+    grid-area: stats; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-bottom-left-radius:2rem;
+    border-bottom-right-radius: 2rem;
+    background: rgb(255, 255, 255);
+  }
+  .card-stats .stat {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(0, 0, 0);
+    padding:10px;
+  }
+  .card{
+    justify-content: space-between;
+  }
+
+
 
 @media (max-width: 760px){
     .logo a{

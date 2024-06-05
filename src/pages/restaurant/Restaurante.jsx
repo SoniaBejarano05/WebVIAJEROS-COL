@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import '../../assets/css/styles.css'
+import '../../assets/css/styles.css';
 import  Imagen  from '../../assets/restaurantes/rest.jpg';
 
 function Restaurante() {
