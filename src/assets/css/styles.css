@@ -127,27 +127,52 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0px;
 }
-.card-stats {
-    grid-area: stats; 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    border-bottom-left-radius:2rem;
-    border-bottom-right-radius: 2rem;
-    background: rgb(255, 255, 255);
-  }
-  .card-stats .stat {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    color: rgb(0, 0, 0);
-    padding:10px;
-  }
-  .card{
+.card{
     justify-content: space-between;
   }
-
+/* PAG RESTAURANTE X ID*/
+.restaurant{
+    display: grid;
+    grid-template-columns: repeat(3, 10fr);
+}
+.img-rest{
+    width: 80%;
+    border-radius: 1rem;
+    box-shadow: 5px 5px rgba(69, 69, 69, 0.491);
+    margin: 10px 0px ;
+}
+.rest1{
+    margin: 10px 10px 10px 15px ;
+    display: flex;
+    flex-direction: column;
+    border: rgb(224, 223, 223) 3px solid;
+    border-radius: 1rem;
+    /*background-color:rgb(187, 186, 186) ;*/
+    box-shadow: 5px 5px rgba(113, 113, 113, 0.655);
+}
+.titluo-1{
+    padding-left: 15px;
+    
+    }
+.titulo-calificacion{
+    padding-left: 15px;
+    height: 25px;
+    font-size: 20px;
+}
+.contenido-1{
+    padding-left: 20px;
+    
+}
+.rest-calificacion{
+    display: grid;
+    grid-template-columns: 1fr 2fr ;
+}
+.campos-calificaciones{
+    display:flex;
+}
+.opiniones{
+    padding-top: 10px;
+}
 
 
 @media (max-width: 760px){

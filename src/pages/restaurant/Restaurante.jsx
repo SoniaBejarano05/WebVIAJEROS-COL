@@ -13,104 +13,93 @@ function Restaurante() {
       var result = response.data.infoRestaurant
       let review = document.getElementById('info');
       console.log(result)
-      /*review.innerHTML = `
-        <img
-            src="${result.fotografias}"
-            alt=""
-            style={{ width: '100%' }}
-            class='img-home'
-          />
-      <p>
-      ${result.categoria}
-      ${result.descripcion}
-      ${result.horario}
-      
-
-      </p>
-      `*/
+      review.innerHTML = `
+          <div class='titulo'>
+            <h1>${result.nombre_restaurante}</h1>
+          </div>
+          <section class='restaurant'>
+            <img
+              src="${result.fotografias}"
+             
+              alt=""
+              class='img-rest rest1'
+            />
+            <div class='rest1'>
+              <h2 class='titulo'>Detalles</h2>
+              <h4 class='titluo-1'>Descripción</h4>
+              <p class='contenido-1'>${result.descripcion}</p>
+              <h4 class='titluo-1'>Tipo de cocina</h4>
+              <p class='contenido-1'>${result.categoria}</p>
+              <h4 class='titluo-1'>Ubicación</h4>
+              <p class='contenido-1'>${result.Ubicacion}</p>
+              <h4 class='titluo-1'>Horario</h4>
+              <p class='contenido-1'>${result.horario}</p>
+            </div>
+            <div class='rest1'>
+              <h2 class='titulo'>Calificaciones</h2>
+              <h3 class='titluo-1'>Calidad</h3>
+              <p class='titluo-1'>Calidad total</p>
+              <h4 class='titluo-1'>Precio</h4>
+              <p class='contenido-1'>Precio total</p>
+              <h4 class='titluo-1'>Servicio al cliente</h4>
+              <p class='contenido-1'>Servicio al cliente total</p>
+            </div>
+          </section>
+       
+      `
     }
     )
     .catch(error => {
       console.log(error);
     });
+    axios.get(`http://localhost:3000/api/rating/restaurant/${id}`)
+    .then(response => {
+      console.log(response)
+      var results2 = response.data.restaurante
+      let review2 = document.getElementById('opiniones');
+      for (var i = 0; i < results2.length; i++) {
+        var item = results2[i];
+        review2.innerHTML += `
+          <div class='rest1 opiniones'>
+            
+            <div class='campos-calificaciones'>
+              <h2 class='titulo-calificacion'>Calidad</h2>
+              <p class='titluo-1'>${item.quality}</p>
+              <h2 class='titulo-calificacion'>Precio</h2>
+              <p class='titluo-1'>${item.quality}</p>
+              <h2 class='titulo-calificacion'>Servicio al cliente</h2>
+              <p class='titluo-1'>${item.customerService}</p>
+            </div>
+            <div class='campos-calificaciones'>
+              <h2 class='titulo-calificacion'>Comentarios</h2>
+              <p class='titluo-1'>${item.comments}</p>
+            </div>
 
+          </div>
+        `;
+      }
+    }
+      // setLoading(false);
+    )
+    .catch(error => {
+      console.log(error);
+    });
+    
   return (
 
 
+    <main>
+      <div class='vh-100 rounded-5'>
 
-    <main id='info'>
-      <div className='vh-100 rounded-5'>
-        <div className='titulo'>
-          <h1>nombre</h1>
-        </div>
-        <img
-          src="https://media.admagazine.com/photos/651aeed9da5f4d9a3844a94b/4:3/w_2660,h_1995,c_limit/Porten%CC%83o-restaurante-1.jpg"
-          style={{ width: '20%' }}
-          alt=""
-          class='img-rest'
-        />
-        <div>
+        <div id='info'>
           
         </div>
+        <h1 className='titulo'>Opiniones</h1>
+        <section id='opiniones'>
+
+        </section>
       </div>
     </main>
-
-
-  )
-
-
-
-  return (
-    <>
-      <div className='vh-100 rounded-5'>
-        <div className='tit-restaurantes'>
-          <h1>Encuentra tu proximo restaurante </h1>
-          <div>
-            <label className='ml-1'>Ciudad</label>
-            <input className='buscar'></input>
-          </div>
-        </div>
-        <main className='cont-tarjeta'>
-          <div className='lateral-izq'>
-            <h2>filtros</h2>
-            <label>Puntuación</label>
-            <select className="select">
-              <option value="value1">1</option>
-              <option value="value2">2</option>
-              <option value="value3">3</option>
-              <option value="value4">4</option>
-              <option value="value5">5</option>
-            </select>
-            <label>Ubicacion</label>
-            <select className="select">
-              <option value="centro">Centro</option>
-              <option value="sur">Sur</option>
-              <option value="norte">Norte</option>
-            </select>
-            <button className='' href=''>Filtrar</button>
-          </div>
-          <div className="card mb-3 rounded-3 tarjeta " >
-            <div className="row g-0">
-              <div className="col-md-4 p-2 d-flex justify-content-center">
-                <img className='' src={Imagen} alt="" />
-              </div>
-              <div className="col-md-8">
-                <div className="card-body">
-                  <h5 className="card-title" >Restaurante</h5>
-                  <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                  <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
-                  <div>
-                    <button className="btn btn-primary">Ver restaurante</button>
-                    <button className="btn btn-warning " style={{ maxWidth: "", margin: "5px" }} >Calificar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
-      </div>
-
-    </>
   )
 }
 
